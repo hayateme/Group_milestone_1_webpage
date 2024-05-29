@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>User Information</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="Account_Information.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>User Information</h1>
+            <div class="blueline">
+                <!-- blueline -->
+            </div>
+            <div>
+                <h1 class="h1sub">Contact information</h1>
+                <div>
+                    <label for="prefix">Prefix</label>
+                    <select id="prefix" v-model="prefix">
+                        <option>Mr.</option>
+                        <option>Ms.</option>
+                        <option>Mrs.</option>
+                        <option>Dr.</option>
+                    </select>
+                </div>
+                <div>
+                    <div>
+                        <!-- Merge into one -->
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" v-model="firstName">
+                        <label class="follower_input_label" for="last-name">Last name</label>
+                        <input type="text" id="last-name" v-model="lastName">
+                    </div>
+                </div>
+                <div>
+                    <label for="phone">Phone no</label>
+                    <input type="tel" id="phone" v-model="phone">
+                </div>
+                <div>
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" v-model="jobTitle">
+                </div>
+            </div>
+            <div>
+                <h1 class="h1sub">Home address</h1>
+                <div>
+                    <label for="home-number">Home number</label>
+                    <input type="text" id="home-number" v-model="homeNumber">
+                </div>
+                <div>
+                    <label for="street-name">Street name</label>
+                    <input type="text" id="street-name" v-model="streetName">
+                </div>
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" id="city" v-model="city">
+                </div>
+                <div>
+                    <label for="country">Country</label>
+                    <input type="text" id="country" v-model="country">
+                </div>
+                <div>
+                    <div>
+                        <!-- Merge into one too -->
+                        <label for="postcode">Postcode</label>
+                        <input type="text" id="postcode" v-model="postcode">
+                        <label class="follower_select_label" for="state">State</label>
+                        <select id="state" v-model="state">
+                            <option>Adelaide</option>
+                            <option>Melbourne</option>
+                            <option>Sydney</option>
+                            <option>Perth</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="h1sub">Organization joined</h1>
+                <select class="User_org_or_evt" v-model="state">
+                    <option>Adelaide Food Bank</option>
+                    <option>-</option>
+                    <option>-</option>
+                    <option>-</option>
+                </select>
+                <h1 class="h1sub">Events joined</h1>
+                <select class="User_org_or_evt" v-model="state">
+                    <option>Adelaide Teen Help</option>
+                    <option>-</option>
+                    <option>-</option>
+                    <option>-</option>
+                </select>
+            </div>
+            <button @click="save">Save</button>
+            <button class="greybutton" @click="Exit">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                prefix: 'Mr.',
+                firstName: '',
+                lastName: '',
+                phone: '',
+                jobTitle: '',
+                homeNumber: '',
+                streetName: '',
+                city: '',
+                country: '',
+                postcode: '',
+                state: 'Adelaide'
+            },
+            methods: {
+                save() {
+                    console.log('Save button clicked');
+                    console.log('Form Data:', {
+                        prefix: this.prefix,
+                        firstName: this.firstName,
+                        lastName: this.lastName,
+                        phone: this.phone,
+                        jobTitle: this.jobTitle,
+                        homeNumber: this.homeNumber,
+                        streetName: this.streetName,
+                        city: this.city,
+                        country: this.country,
+                        postcode: this.postcode,
+                        state: this.state
+                    });
+                    // Here to add code
+                }
+            }
+        });
+    </script>
+</body>
+</html>

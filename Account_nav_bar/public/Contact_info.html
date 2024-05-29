@@ -1,0 +1,235 @@
+<html>
+<head>
+    <title>Account Information</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="Account_Information.css">
+    <style>
+        
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #e9ecf1;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 303px; 
+            margin-top: 10px;
+        }
+        h1 {
+            margin-top: 0px;
+            margin-bottom: 2px;
+            margin-left: 20px;
+            padding-bottom: 2px;
+            font-size: larger;
+        }
+
+        /*Horizontal arrangement*/
+        label {
+            display: inline-block;
+            width: 120px; 
+            margin-bottom: 5px;
+            color: #495364;
+        }
+        /*Tailored style for follower input*/
+        .follower_input_label {
+            display: inline-block;
+            width: 110px; 
+            margin-bottom: 5px;
+            margin-left: 20px;
+            color: #495364;
+        }
+
+        /*Tailored style for following select*/
+        .follower_select_label {
+            display: inline-block;
+            width: 100px; 
+            margin-bottom: 5px;
+            margin-left: 40px;
+            color: #495364;
+        }
+
+        .h1sub {
+            margin-top: 20px;
+            margin-bottom: 2px;
+            margin-left: 35px;
+            padding-bottom: 10px;
+            font-size: larger;
+        }
+
+        /* div */
+        .blueline{
+            margin-left: 10px;
+            border-bottom: 2px solid #3391d0;
+            margin-right: 80px;
+        }
+
+        select {
+            width: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #d0d3d6;
+            border-radius: 5px;
+            margin-left: -20px; /*  margin-right */
+        }
+
+        input {
+            width: 160px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #d0d3d6;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-left: 40px;
+            background-color: #3498dbf5;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2573b2;
+        }
+
+        .User_org_or_evt{
+            width: 180px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #d0d3d6;
+            border-radius: 5px;
+            margin-left: 20px; /*  margin-right */
+        }
+        /*  */
+        .greybutton {
+            margin-left: 40px;
+            background-color: #373c3ff5;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .greybutton:hover {
+            background-color: #42484bf5;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>Account Information</h1>
+            <div class="blueline">
+                <!-- blueline -->
+            </div>
+            <div>
+                <h1 class="h1sub">Contact information</h1>
+                <div>
+                    <label for="prefix">Prefix</label>
+                    <select id="prefix" v-model="prefix">
+                        <option>Mr.</option>
+                        <option>Ms.</option>
+                        <option>Mrs.</option>
+                        <option>Dr.</option>
+                    </select>
+                </div>
+                <div>
+                    <div>
+                        <!-- Merge into one -->
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" v-model="firstName">
+                        <label class="follower_input_label" for="last-name">Last name</label>
+                        <input type="text" id="last-name" v-model="lastName">
+                    </div>
+                </div>
+                <div>
+                    <label for="phone">Phone no</label>
+                    <input type="tel" id="phone" v-model="phone">
+                </div>
+                <div>
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" v-model="jobTitle">
+                </div>
+            </div>
+            <div>
+                <h1 class="h1sub">Home address</h1>
+                <div>
+                    <label for="home-number">Home number</label>
+                    <input type="text" id="home-number" v-model="homeNumber">
+                </div>
+                <div>
+                    <label for="street-name">Street name</label>
+                    <input type="text" id="street-name" v-model="streetName">
+                </div>
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" id="city" v-model="city">
+                </div>
+                <div>
+                    <label for="country">Country</label>
+                    <input type="text" id="country" v-model="country">
+                </div>
+                <div>
+                    <div>
+                        <!-- Merge into one too -->
+                        <label for="postcode">Postcode</label>
+                        <input type="text" id="postcode" v-model="postcode">
+                        <label class="follower_select_label" for="state">State</label>
+                        <select id="state" v-model="state">
+                            <option>Adelaide</option>
+                            <option>Melbourne</option>
+                            <option>Sydney</option>
+                            <option>Perth</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button @click="save">Save</button>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                prefix: 'Mr.',
+                firstName: '',
+                lastName: '',
+                phone: '',
+                jobTitle: '',
+                homeNumber: '',
+                streetName: '',
+                city: '',
+                country: '',
+                postcode: '',
+                state: 'Adelaide'
+            },
+            methods: {
+                save() {
+                    console.log('Save button clicked');
+                    console.log('Form Data:', {
+                        prefix: this.prefix,
+                        firstName: this.firstName,
+                        lastName: this.lastName,
+                        phone: this.phone,
+                        jobTitle: this.jobTitle,
+                        homeNumber: this.homeNumber,
+                        streetName: this.streetName,
+                        city: this.city,
+                        country: this.country,
+                        postcode: this.postcode,
+                        state: this.state
+                    });
+                    // Here to add code
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  type="images/x-icon"  href="images/LOGO.png">
+    <link rel="stylesheet" href="signup.css">
+    <title>SignUp</title>
+</head>
+        <div class="R_register">
+            <h3 style="color: rgb(131, 208, 238);">Sign up Qiuckly</h3>
+            <p>email</p>
+            <p><input type="text" id="R_email"></p>
+            <p >username</p>
+            <p><input type="text" placeholder="The username length cannot exceed 5 digits" id="R_user"></p>
+            <p>gender</p>
+            <p>
+                <span>male</span>
+                <span><input style="width: auto;" type="radio" name="sex" value="male" checked="checked" ></span>
+                <span>female</span>
+                <span><input style="width: auto;" type="radio" name="sex" value="female" ></span>
+            </p>
+            <p >avatar</p>
+            <p><input type="file" id="toux"></p>
+            <p >password</p>
+            <p><input type="password" placeholder="The password must be at least 6 digits in length and a combination of numbers and letters" id="R_pwd"></p>
+            <p >Confirm password</p>
+            <p><input type="password" placeholder="passwords must be consistent" id="R_repwd" onkeyup="checkpassword()"></p>
+            <span id="tishi"></span></input>
+            <p><button id="R_registerbtn" onclick=javascrtpt:jump()>sign up</button></p>
+        </div>
+        <div class="R_login">
+            <br><br>
+            <h3 class="title">Existing account?</h3>
+            <p style="color: white;">Login now that you have an account, long time no see!</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <p><button id="R_loginbtn" onclick=javascrtpt:jump3()>log in</button></p>
+        </div>
+        <script>
+ 
+            R_email.onchange = function(){
+		    var R_email = this.value;
+		    var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		    if(!reg.test(R_email)){
+		    	alert("The email format is incorrect, please re-enter");
+                return false;
+		    }
+	        }
+ 
+            R_user.onchange = function(){
+		    var  R_user= this.value;
+		    var reg = /^\S{1,5}$/;
+		    if(!reg.test( R_user)){
+		    	alert("The username length cannot exceed 5 digits");
+                return false;
+		    }
+	        }
+ 
+            R_pwd.onchange = function(){
+		    var R_pwd = this.value;
+		    var reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/;
+		    if(!reg.test(R_pwd)){
+                alert("The password length should be greater than 6 digits, consisting of numbers and letters");
+                return false;
+		    }
+	        }
+ 
+            function checkpassword() {
+    		var password = document.getElementById("R_pwd").value;
+    		var repassword = document.getElementById("R_repwd").value;
+    		if(password == repassword) {
+    			 document.getElementById("tishi").innerHTML="<font color='green'>Two passwords are the same</font>";
+			}else {
+				 document.getElementById("tishi").innerHTML="<font color='red'>Two passwords aren't the same</font>";
+			} 
+    	    }
+ 
+            function jump(){
+                localStorage.setItem("username",document.getElementById("R_user").value);
+                localStorage.setItem("password",document.getElementById("R_pwd").value);
+                localStorage.setItem("email",document.getElementById("R_email").value);
+ 
+                var Email = document.getElementById("R_email");  
+                var User = document.getElementById("R_user");  
+                var Toux = document.getElementById("toux");
+                var Password = document.getElementById("R_pwd");
+                var Repassword = document.getElementById("R_repwd");
+ 
+                if(Email.value == "" || User.value ==""|| Toux.value ==""|| Password.value =="") {            
+                    alert("Email, username, avatar or password cannot be empty");            
+                    return false;            
+                }  
+                else if(Password.value == Repassword.value) {
+                    alert("Successful registration, welcome to the login screen");
+                    window.location.href="login.html";
+                }
+                else{
+                   alert("Incorrect registration information");
+                }
+            }
+ 
+            function jump3(){
+                 window.location.href="login.html";
+            }
+        </script>
+</body>
+</html>

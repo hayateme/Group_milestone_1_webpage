@@ -1,0 +1,115 @@
+
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #e9ecf1;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 303px; 
+            margin-top: 10px;
+        }
+        h1 {
+            margin-top: 0px;
+            margin-bottom: 2px;
+            margin-left: 20px;
+            padding-bottom: 2px;
+            font-size: larger;
+        }
+
+        /*Horizontal arrangement*/
+        label {
+            display: inline-block;
+            width: 120px; 
+            margin-bottom: 5px;
+            color: #495364;
+        }
+        /*Tailored style for follower input*/
+        .follower_input_label {
+            display: inline-block;
+            width: 110px; 
+            margin-bottom: 5px;
+            margin-left: 20px;
+            color: #495364;
+        }
+
+        /*Tailored style for following select*/
+        .follower_select_label {
+            display: inline-block;
+            width: 100px; 
+            margin-bottom: 5px;
+            margin-left: 40px;
+            color: #495364;
+        }
+
+        .h1sub {
+            margin-top: 20px;
+            margin-bottom: 2px;
+            margin-left: 35px;
+            padding-bottom: 10px;
+            font-size: larger;
+        }
+
+        /* div */
+        .blueline{
+            margin-left: 10px;
+            border-bottom: 2px solid #3391d0;
+            margin-right: 80px;
+        }
+
+        select {
+            width: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #d0d3d6;
+            border-radius: 5px;
+            margin-left: -20px; /*  margin-right */
+        }
+
+        input {
+            width: 160px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #d0d3d6;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-left: 40px;
+            background-color: #3498dbf5;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2573b2;
+        }
+
+        .User_org_or_evt{
+            width: 180px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #d0d3d6;
+            border-radius: 5px;
+            margin-left: 20px; /*  margin-right */
+        }
+        /*  */
+        .greybutton {
+            margin-left: 40px;
+            background-color: #373c3ff5;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .greybutton:hover {
+            background-color: #42484bf5;
+        }
+    

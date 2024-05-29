@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="Ban_user.css">
+    <title>Ban User</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="form">
+            <h1>Ban User</h1>
+            <div class="blueline"> <!-- blue line --> </div>
+            <div class="form-group">
+                <label for="new-email" class="form-label">Period</label>
+                <!-- not id yet -->
+                <select v-model="Period">
+                    <option>3 minutes</option>
+                    <option>3 hours</option>
+                    <option>3 days</option>
+                    <option>3 years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Reasons</label>
+                <input type="password" id="password" class="form-input" placeholder="Input Reasons">
+            </div>
+            <button class="redbutton">Ban</button>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>
+</html>

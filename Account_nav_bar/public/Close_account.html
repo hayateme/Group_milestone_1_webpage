@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="Close_Account.css">
+    <title>Close Account</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>Close Account</h1>
+            <div class="blueline"> <!-- blue line --> </div>
+            <p>Please take a moment to let us know why you are leaving:</p>
+            <input
+                type="text"
+                v-model="feedback"
+                placeholder="Feedback"
+            />
+            <p>Password</p>
+            <input
+                type="password"
+                v-model="password"
+                placeholder="Password"
+            />
+            <button @click="closeAccount">Close Account</button>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                feedback: '',
+                password: ''
+            },
+            methods: {
+                closeAccount() {
+                    console.log('Close Account button clicked');
+                    console.log('Feedback:', this.feedback);
+                    console.log('Password:', this.password);
+                    // Here to add code
+                }
+            }
+        });
+    </script>
+</body>
+</html>

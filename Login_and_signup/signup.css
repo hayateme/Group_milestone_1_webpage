@@ -1,0 +1,82 @@
+
+        html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            background: url(images/background.jpg) no-repeat 0px 0px;
+            background-repeat: no-repeat;
+        }
+        body{
+
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+            font-family: Verdana, sans-serif;
+            background-color: #e9ecf1;
+        }
+        
+        input{
+            text-align: center;
+            border:none; 
+            background-color: rgba(241, 244, 245, 0.1);
+            border-bottom:1px solid rgb(80, 196, 241);
+            width: 260px;
+        }
+        
+        p{
+            text-align: center;
+            color: rgb(116, 114, 114);
+        }
+        .R_register{
+            margin-top: 30px;
+            width: 600px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 590px;
+            background-color: rgba(247, 248, 248, 0.7);
+            box-shadow: 7px 7px 17px rgba(236, 239, 239, 0.4);
+        }
+ 
+        .R_login{
+            margin-top: 30px;
+            width: 300px;
+            justify-content: center;
+            align-items: center;
+            height: 590px;
+            background-color: rgba(160, 144, 144, 0.6);
+            box-shadow: 7px 7px 17px rgba(52, 56, 66, 0.3);
+        }
+ 
+        #R_registerbtn {
+            border-color: cornsilk;
+            background-color: rgba(59, 194, 248, 0.6);
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 15px;
+            width: 190px;
+            height: 31px;
+            font-size: 16px;
+        }
+ 
+        #R_loginbtn{
+            border: 20px solid white;
+            background-color: rgba(71, 196, 245, 0.6);
+            border-radius: 50%;
+            color: aliceblue;
+            border-style: hidden;
+            border-radius: 15px;
+            width: 100px;
+            height: 31px;
+            font-size: 16px;
+            
+        }
+        .title{
+            color: white;
+            text-align: center;
+        }

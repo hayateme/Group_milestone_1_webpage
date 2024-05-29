@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="Remove_user.css">
+    <title>Remove User</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>Remove User</h1>
+            <div class="blueline"> <!-- blue line --> </div>
+            <p>Removes user from events:</p>
+            <select v-model="user_events">
+                <option>Adelaide teen help</option>
+                <option>-</option>
+                <option>-</option>
+                <option>-</option>
+            </select>
+            <p>Reason</p>
+            <textarea
+                class="reason-form-input"
+                rows="6"
+                placeholder="Reason...">
+                
+            </textarea>
+
+            <!-- 使用超链接来实现跳转 -->
+            <a href="/Remove_user_password.html" class="button-like-link">Remove off</a>
+        </div>
+    </div>
+
+    <script>
+        // 这里可以是你的 Vue 逻辑代码，如果没有其他逻辑，可以省略
+    </script>
+</body>
+</html>

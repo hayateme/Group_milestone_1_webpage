@@ -1,0 +1,117 @@
+
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #e9ecf1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4c576ae9;
+            margin-left: 10px;
+        }
+        p {
+            margin-bottom: 10px;
+            color: #4c576ae9;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c9cdd2;
+            border-radius: 5px;
+        }
+        
+        button {
+            margin-left: 40px;
+            background-color: #fb791c;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e1580e;
+        }
+
+        /* 按钮样式 */
+        .button-like-link {
+            display: inline-block;
+            background-color: #fb791c;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none; /* 去除超链接的下划线 */
+            transition: background-color 0.3s; /* 添加过渡效果 */
+        }
+
+        .button-like-link:hover {
+            background-color: #e1580e;
+        }
+
+        /* div blue line*/
+        .blueline{
+            margin-left: 0px;
+            border-bottom: 2px solid #3391d0;
+            margin-right: 40px;
+            margin-top: -12px;
+            margin-bottom: 10px;
+        }
+
+        /*  */
+
+        select {
+            width: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            outline: none;
+        }
+
+        .reason-form-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c9cdd2;
+            border-radius: 5px;
+            text-align: left;
+        }
+        
+        .reason-form-input::placeholder {
+            text-align: left;
+        }
+        /*  */
+        textarea.reason-form-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #c9cdd2;
+            border-radius: 5px;
+            text-align: left;
+        }
+        
+        textarea.reason-form-input::placeholder {
+            text-align: left;
+        }
+   

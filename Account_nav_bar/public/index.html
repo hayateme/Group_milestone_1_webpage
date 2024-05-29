@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>navbar</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="stylesheets/navbar.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+}
+
+#column_nav_account {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #edf2f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*Add Shadow*/
+  padding-top: 20px;
+}
+
+#column_nav_account ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#column_nav_account ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #d1d5db; /*Add bottom border as separator line*/
+  transition: background-color 0.3s; /*Add transition effects*/
+}
+
+#column_nav_account ul li:hover {
+  background-color: #e2e8f0; /*Background color during hovering*/
+}
+
+#column_nav_account ul li.active {
+  background-color: #e2e8f0; /*Background color when selected*/
+}
+
+#column_nav_account ul li a {
+  display: block;
+  color: #4a5568; 
+  text-decoration: none; /*Remove underline from hyperlink*/
+}
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <div id="column_nav_account">
+    <ul>
+      <li :class="{ 'active': activeTab === 'Contact_info' }" @click="setActiveTab('Contact_info')"><a href="#">Contact info</a></li>
+      <li :class="{ 'active': activeTab === 'Change_email' }" @click="setActiveTab('Change_email')"><a href="#">Change email</a></li>
+      <li :class="{ 'active': activeTab === 'Password' }" @click="setActiveTab('Password')"><a href="#">Password</a></li>
+      <li :class="{ 'active': activeTab === 'Email_preference' }" @click="setActiveTab('Email_preference')"><a href="#">Email preference</a></li>
+      <li :class="{ 'active': activeTab === 'Close_account' }" @click="setActiveTab('Close_account')"><a href="#">Close account</a></li>
+    </ul>
+  </div>
+  <div id="content_area">
+  </div>
+</div>
+
+<script>
+  const { createApp, ref, onMounted } = Vue;
+
+  createApp({
+    setup() {
+      const activeTab = ref('Contact_info');
+
+      const setActiveTab = (tab) => {
+        activeTab.value = tab;
+        loadContent(tab);
+      };
+
+      const loadContent = (section) => {
+        $.ajax({
+          url: `/content/${section}`,
+          method: 'GET',
+          success: function(data) {
+            $('#content_area').html(data);
+          },
+          error: function(err) {
+            console.error('Error loading content:', err);
+          }
+        });
+      };
+
+      // Load default content
+      onMounted(() => {
+        loadContent('Contact_info');
+      });
+
+      return { activeTab, setActiveTab };
+    }
+  }).mount('#app');
+
+</script>
+
+</body>
+</html>
